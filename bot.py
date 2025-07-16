@@ -168,5 +168,10 @@ async def auto_tagall(client, message: Message):
         await log_action(message.chat.id, message.from_user.username or "-", f"AutoTagAll {len(members)} members")
 
 if __name__ == "__main__":
-    asyncio.run(init_db())
+    import asyncio
+
+    async def prepare():
+        await init_db()
+
+    asyncio.get_event_loop().run_until_complete(prepare())
     app.run()
