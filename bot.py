@@ -115,18 +115,19 @@ async def mention_handler(client, message: Message):
             pass
 
 async def main():
+    print("🔄 Inisialisasi database...")
     await init_db()
     await app.start()
-    print("✅ Bot berjalan...")
+    print("✅ Bot online.")
 
     try:
         await app.send_message(OWNER_ID, "🚀 Bot berhasil di-deploy dan siap digunakan.")
+        print("✅ Notifikasi dikirim ke owner.")
     except Exception as e:
         print(f"⚠️ Gagal kirim notifikasi ke owner: {e}")
 
     await idle()
     await app.stop()
-
 
 if __name__ == "__main__":
     asyncio.run(main())
