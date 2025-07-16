@@ -4,4 +4,4 @@ BOT_TOKEN = "8160674170:AAHpUzUKgdF2Y5cIuwIdhBuuft3uFZ7CCME"  # Ganti dengan BOT
 OWNER_ID = 6305402536  # ID Telegram kamu
 LOG_CHAT_ID = -1002531425967 
 MENTION_COOLDOWN = 300  # Detik (5 menit)
-DB_PATH = "partner_groups.db"
+DB_PATH = "mentionbot.db"
