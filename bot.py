@@ -138,14 +138,19 @@ async def start_message(_, m: Message):
     await m.reply("🤖 Bot aktif.\nGunakan /addpartner jika kamu memiliki akses.\nKirim link partner resmi di sini untuk mention otomatis.")
 
 async def main():
+    print("🔄 Inisialisasi database...")
     await init_db()
+    print("🚀 Menjalankan bot...")
     await app.start()
     try:
         await app.send_message(OWNER_ID, "🚀 Bot berhasil diaktifkan.")
-    except:
-        pass
+    except Exception as e:
+        print(f"❌ Gagal kirim notifikasi owner: {e}")
+    print("✅ Bot aktif. Menunggu perintah...")
     await idle()
     await app.stop()
+    print("🛑 Bot dihentikan.")
+
 
 if __name__ == "__main__":
     asyncio.run(main())
